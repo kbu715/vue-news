@@ -4,22 +4,20 @@
           <i class="fas fa-user"></i>
         </div>
         <div class="user-description">
-          <div>
-            {{ info.id }}
-          </div>
+          <slot name="username">
+            <!-- 상위 컴포넌트에서 정의할 영역 -->
+          </slot>
           <div class="time">
-            {{ info.created }}
+            <i><slot name="time"></slot></i>
           </div>
+          <slot name="karma">
+            <!-- 상위 컴포넌트에서 정의할 영역 -->
+          </slot>
         </div>
       </div>
 </template>
 <script>
-export default {
-  props: {
-    // props의 type 지정
-    info: Object,
-  }
-}
+
 </script>
 <style scoped>
 .user-container {

@@ -1,6 +1,11 @@
 <template>
   <div>
-    <user-profile :info="userInfo"></user-profile>
+    <user-profile>
+      <div slot="username">{{ userInfo.id }}</div>
+      <span slot="time">{{ 'Joined ' + userInfo.created}}, </span>
+      <!-- karma : 활동점수 -->
+      <span slot="karma">{{ userInfo.karma }}</span>
+    </user-profile>
   </div>
 </template>
 
