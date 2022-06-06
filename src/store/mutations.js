@@ -1,12 +1,15 @@
 export default {
-  SET_NEWS(state, newsData) {
-    state.news = newsData;
-  },
-  SET_JOBS(state, jobsData) {
-    state.jobs = jobsData;
-  },
-  SET_ASK(state, askData) {
-    state.ask = askData;
+  // SET_NEWS(state, newsData) {
+  //   state.news = newsData;
+  // },
+  // SET_JOBS(state, jobsData) {
+  //   state.jobs = jobsData;
+  // },
+  // SET_ASK(state, askData) {
+  //   state.ask = askData;
+  // },
+  SET_LIST(state, data) {
+    state.list = data;
   },
   SET_USER(state, userData) {
     state.user = userData;

@@ -37,14 +37,7 @@
 export default {
   computed: {
     listItems() {
-        const pathName = this.$route.name;
-        if (pathName === 'news') {
-          return this.$store.state.news;
-        } else if (pathName === 'ask') {
-          return this.$store.state.ask;
-        } else if (pathName === 'jobs') {
-          return this.$store.state.jobs;
-        } else return [];
+        return this.$store.state.list;
     }
   }
 }
