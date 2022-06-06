@@ -19,3 +19,73 @@
 ### `<template></template>`
 
 `text`만 존재하는 태그!
+
+
+## 컴포넌트의 코드마저 재사용하는 하이 오더 컴포넌트
+
+뷰의 하이 오더 컴포넌트는 리액트의 하이 오더 컴포넌트에서 기원된 것입니다.
+
+A higher-order component (HOC) is an advanced technique in React for reusing component logic.
+
+즉, 하이 오더 컴포넌트는 **컴포넌트의 로직(코드)을 재사용하기 위한 고급 기술 입니다.**
+
+단점: 컴포넌트의 깊이가 깊어짐으로써 컴포넌트 간 통신이 불편해진다.
+
+
+## Mixins
+
+믹스인은 여러 컴포넌트 간에 공통으로 사용하고 있는 로직, 기능들을 재사용하는 방법입니다.
+
+믹스인에 정의할 수 있는 재사용 로직은 data, methods, created 등과 같은 컴포넌트
+옵션입니다.
+
+```javascript
+const HelloMixins = {
+  // 컴포넌트 옵션 (data, methods, created 등)
+}
+
+new Vue({
+  mixins: [HelloMixins]
+})
+
+
+
+// 실제로 있을 법한 예시
+
+const DialogMixin = {
+  data() {
+    return {
+      dialog: false
+    }
+  },
+  methods: {
+    showDialog() {
+      this.dialog = true;
+    },
+    closeDialog() {
+      this.dialog = false;
+    }
+  }
+}
+
+
+<!-- LoginForm.vue -->
+<script>
+import { DialogMixin } from './mixins.js';
+
+export default {
+  // ..
+  mixins: [ DialogMixin ]
+  methods: {
+    submitForm() {
+      axios.post('login', {
+        id: this.id,
+        pw: this.pw
+      })
+      .then(() => this.closeDialog())
+      .catch((error) => new Error(error));
+    }
+  }
+}
+</script>
+```
