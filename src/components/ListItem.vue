@@ -35,18 +35,6 @@
 </template>
 <script>
 export default {
-  created() {
-    const pathName = this.$route.name;
-    let actionName;
-    if (pathName === 'news') {
-      actionName = 'FETCH_NEWS';
-    } else if (pathName === 'ask') {
-      actionName = 'FETCH_ASK';
-    } else if (pathName === 'jobs') {
-      actionName = 'FETCH_JOBS';
-    }
-    this.$store.dispatch(actionName);
-  },
   computed: {
     listItems() {
         const pathName = this.$route.name;

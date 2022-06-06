@@ -5,6 +5,7 @@ export default {
     fetchNewsList()
       .then(response => {
         context.commit('SET_NEWS', response.data);
+        return response.data; // Promise chaining을 하기 위해서
       })
       .catch(err => {
         console.log(err);
@@ -14,6 +15,7 @@ export default {
     fetchJobsList()
       .then(({ data }) => {
         commit('SET_JOBS', data);
+        return data;
       })
       .catch(err => {
         console.log(err);
@@ -23,6 +25,7 @@ export default {
     fetchAskList()
       .then(({ data }) => {
         commit('SET_ASK', data);
+        return data;
       })
       .catch(err => {
         console.log(err);
