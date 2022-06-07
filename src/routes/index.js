@@ -59,10 +59,24 @@ export const router = new VueRouter({
     {
       path: '/user/:id',
       component: UserView,
+      beforeEnter: (to, from, next) => {
+        store.commit('RESET_USER');
+        store
+          .dispatch('FETCH_USER', to.params.id)
+          .then(() => next())
+          .catch((error) => console.log(error));
+      },
     },
     {
       path: '/item/:id',
       component: ItemView,
+      beforeEnter: (to, from, next) => {
+        store.commit('RESET_ITEM');
+        store
+          .dispatch('FETCH_ITEM', to.params.id)
+          .then(() => next())
+          .catch((error) => console.log(error));
+      },
     },
   ]
 });

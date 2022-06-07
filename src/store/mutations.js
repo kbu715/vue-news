@@ -1,13 +1,4 @@
 export default {
-  // SET_NEWS(state, newsData) {
-  //   state.news = newsData;
-  // },
-  // SET_JOBS(state, jobsData) {
-  //   state.jobs = jobsData;
-  // },
-  // SET_ASK(state, askData) {
-  //   state.ask = askData;
-  // },
   SET_LIST(state, data) {
     state.list = data;
   },
@@ -16,5 +7,11 @@ export default {
   },
   SET_ITEM(state, item) {
     state.item = item;
+  },
+  RESET_USER(state) {
+    state.user = {};
+  },
+  RESET_ITEM(state) {
+    state.item = {};
   }
 }

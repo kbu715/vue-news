@@ -8,6 +8,9 @@
 
 <script>
 export default {
+  // props: ['loading']
+
+  // props validation 문법
   props: {
     loading: {
       type: Boolean,
