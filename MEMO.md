@@ -139,3 +139,8 @@ export default {
   ```html
   <div ref="app">Hello</div>
   ```
+
+
+  ### Vue CLI 배포 설명 페이지 링크
+
+  [https://cli.vuejs.org/guide/deployment.html#netlify](https://cli.vuejs.org/guide/deployment.html#netlify)
