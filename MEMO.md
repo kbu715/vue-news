@@ -125,3 +125,17 @@ export default {
   4. 차트를 컴포넌트화 (O)
   5. 컴포넌트의 플러그인화
   6. 컴포넌트 통신을 이용한 차트 컴포넌트 기능 결합
+
+
+## this.$refs.###
+
+- `Vue`에서 `DOM`에 접근하고자 할 때 이용한다.
+- 컴포넌트 기반일 때 template안에서 사용한다.
+
+  ```javascript
+    this.$refs.app
+  ```
+
+  ```html
+  <div ref="app">Hello</div>
+  ```
