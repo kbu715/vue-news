@@ -8,11 +8,12 @@
 <script>
 import BarChart from '../components/BarChart.vue';
 import LineChart from '../components/LineChart.vue';
+import ListMixin from '../mixins/ListMixin';
 
 export default {
   data() {
     return {
-      datasets: []
+      datasets: [],
     }
   },
   components: {
@@ -41,7 +42,8 @@ export default {
             ],
             borderWidth: 1
         }]
-  }
+  },
+  mixins: [ListMixin],
 }
 </script>
 <style>

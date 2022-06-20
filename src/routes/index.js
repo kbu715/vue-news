@@ -21,6 +21,10 @@ export const router = new VueRouter({
     {
       path: '/chart',
       name: 'chart',
+      beforeEnter: (to, from, next) => {
+        bus.$emit('start:spinner');
+        next();
+      },
       component: ChartView
     },
     {
