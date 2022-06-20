@@ -4,11 +4,9 @@
   </div>
 </template>
 <script>
-import Chart from 'chart.js';
-
 export default {
   mounted() {
-    new Chart(this.$refs.lineChart.getContext('2d'), {
+    new this.$_Chart(this.$refs.lineChart.getContext('2d'), {
       // The type of chart we want to create
       type: 'line',
 
