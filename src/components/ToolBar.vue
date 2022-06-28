@@ -3,7 +3,8 @@
     <router-link to="/news">News</router-link> |
     <router-link to="/ask">Ask</router-link> |
     <router-link to="/jobs">Jobs</router-link> |
-    <router-link to="/chart">Chart</router-link>
+    <router-link to="/chart">Chart</router-link> |
+    <router-link to="/date-picker">Date-Picker</router-link>
   </div>
 </template>
 

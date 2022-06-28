@@ -6,6 +6,7 @@ import JobsView from '../views/JobsView.vue';
 import UserView from '../views/UserView.vue';
 import ItemView from '../views/ItemView.vue';
 import ChartView from '../views/ChartView.vue';
+import DatePicker from '../views/DatePicker.vue';
 import bus from '../utils/bus';
 import { store } from '../store/index';
 
@@ -26,6 +27,15 @@ export const router = new VueRouter({
         next();
       },
       component: ChartView
+    },
+    {
+      path: '/date-picker',
+      name: 'date-picker',
+      beforeEnter: (to, from, next) => {
+        bus.$emit('start:spinner');
+        next();
+      },
+      component: DatePicker
     },
     {
       path: '/news',
